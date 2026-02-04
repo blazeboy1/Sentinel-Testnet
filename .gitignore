@@ -1,21 +1,15 @@
-# Foundry
-out/
-cache/
-lib/
+# Remix compiler artifacts
+**/artifacts/
+**/artifacts/**
 
-# Environment
+# Remix plugin state folders
+deps/
+states/
+
+# Debug info
+*.dbg.json
+*.tsbuildinfo
+
+# Optional
 .env
 .env.local
-
-# OS / Editor
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-
-# Logs
-*.log
-
-# Coverage
-coverage/
-lcov.info
