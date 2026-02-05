@@ -3,8 +3,9 @@ pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "./IStrategy.sol";
 
-contract MockYieldStrategy is Ownable {
+contract MockYieldStrategy is Ownable, IStrategy {
     IERC20 public immutable asset;
     uint256 public simulatedYield;
 
@@ -12,10 +13,11 @@ contract MockYieldStrategy is Ownable {
         asset = asset_;
     }
 
-    function deposit(uint256) external {}
-    function withdraw(uint256) external {}
+    function deposit(uint256) external override {}
 
-    function totalAssets() external view returns (uint256) {
+    function withdraw(uint256) external override {}
+
+    function totalAssets() external view override returns (uint256) {
         return asset.balanceOf(address(this)) + simulatedYield;
     }
 
